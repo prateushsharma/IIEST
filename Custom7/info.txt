@@ -1,0 +1,31 @@
+Public address of the key:   0x29BA83f30694B420905F5a64ED5d0fc5DA8C187B
+Path of the secret key file: data\keystore\UTC--2024-06-16T11-02-55.066880600Z--29ba83f30694b420905f5a64ed5d0fc5da8c187b
+
+1234
+
+
+Public address of the key:   0xb865A88BaE545a461396E27C8510516203790C6b
+Path of the secret key file: data\keystore\UTC--2024-06-16T11-03-42.833227700Z--b865a88bae545a461396e27c8510516203790c6b
+
+1234
+
+enode://746b7cb02fad87fa5b0bf2f508e14c954e013672bf67dbeb0087a372bf3db1bf2bb0c7a9b06e3042bee5bb4ef231a421f0143d47b4f9c28e1a60d9b0523c53da@127.0.0.1:0?discport=30301
+
+bnode command:
+U:\Custom7\bnode>node -nodekey "./boot.key" -verbosity 7 -addr "127.0.0.1:30301"
+node: bad option: -nodekey
+
+U:\Custom7\bnode>bootnode -nodekey boot.key
+
+U:\Custom7\bnode>bootnode -nodekey boot.key -verbosity 7 -addr "127.0.0.1:30301"
+
+enode://746b7cb02fad87fa5b0bf2f508e14c954e013672bf67dbeb0087a372bf3db1bf2bb0c7a9b06e3042bee5bb4ef231a421f0143d47b4f9c28e1a60d9b0523c53da@127.0.0.1:0?discport=30301
+Note: you're using cmd/bootnode, a developer tool.
+We recommend using a regular node as bootstrap node for production deployments.
+INFO [06-16|19:52:04.018] New local node record                    seq=1,718,547,724,018 id=7dc6910e9e55038c ip=<nil> udp=0 tcp=0
+
+node 1 command
+U:\Custom7\node1>geth --networkid 14333 --datadir "./data" --bootnodes enode://746b7cb02fad87fa5b0bf2f508e14c954e013672bf67dbeb0087a372bf3db1bf2bb0c7a9b06e3042bee5bb4ef231a421f0143d47b4f9c28e1a60d9b0523c53da@127.0.0.1:0?discport=30301 --port 30303 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8545 --unlock 0x29BA83f30694B420905F5a64ED5d0fc5DA8C187B --password password.txt --mine console
+
+node 2 command
+U:\Custom7\node2>geth --networkid 14333 --datadir "./data" --bootnodes enode://746b7cb02fad87fa5b0bf2f508e14c954e013672bf67dbeb0087a372bf3db1bf2bb0c7a9b06e3042bee5bb4ef231a421f0143d47b4f9c28e1a60d9b0523c53da@127.0.0.1:0?discport=30301 --port 30304 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8546 --unlock 0xb865A88BaE545a461396E27C8510516203790C6b --password password.txt --authrpc.port 8552 console
